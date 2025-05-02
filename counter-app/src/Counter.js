@@ -10,16 +10,28 @@ function incrementCounter(num){
       } 
 }
 
+function decrementCounter(num){
+    return { 
+        type: 'DECREASE',
+        num: num
+      } 
+}
+
 
 
 const Counter = (props) => {
     function incrementClick() {
         props.incrementCounter(1);
     }
+
+    function decreaseClick() {
+        props.decrementCounter(3);
+    }
     return (
         <div>
             <p>{props.count}</p>
             <button onClick={incrementClick}>Increment</button>
+            <button onClick={decreaseClick}>Decrement</button>
         </div>
     )
 }
@@ -35,7 +47,8 @@ function mapStateToProps(state) {
 
 //mapDispatchToProps    
 const mapDispatchToProps = {
-    incrementCounter
+    incrementCounter,
+    decrementCounter
 }
 
 //connect

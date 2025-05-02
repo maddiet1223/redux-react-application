@@ -12,6 +12,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return { ...state, count: state.count + action.num };
+    case 'DECREASE':
+      return { ...state, count: state.count - action.num };
     default:
       return state;
   }
